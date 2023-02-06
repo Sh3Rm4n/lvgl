@@ -75,6 +75,8 @@ else()
     message(FATAL_ERROR "Must provide a known options value (check main.py?).")
 endif()
 
+set(CMAKE_C_STANDARD 99)
+
 # Options lvgl and examples are compiled with.
 set(COMPILE_OPTIONS
     -DLV_CONF_PATH=${LVGL_TEST_DIR}/src/lv_test_conf.h
