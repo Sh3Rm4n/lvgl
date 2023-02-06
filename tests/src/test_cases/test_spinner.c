@@ -21,12 +21,12 @@ void tearDown(void)
 
 void test_spinner_spinning(void)
 {
-    for(int i = 0; i < 10; ++i) {
+    for(unsigned char i = 0; i < 10; ++i) {
         lv_tick_inc(50);
         lv_task_handler();
 
-        char filename[15];
-        snprintf(filename, 15, "spinner_%02d.png", i);
+        char filename[16];
+        snprintf(filename, sizeof(filename), "spinner_%02u.png", i);
         TEST_ASSERT_EQUAL_SCREENSHOT(filename);
     }
 }
